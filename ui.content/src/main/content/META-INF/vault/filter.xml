@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/minsait-viajes" mode="merge"/>
+    <filter root="/content/minsait-viajes" mode="merge"/>
+    <filter root="/content/dam/minsait-viajes" mode="merge">
+        <exclude pattern="/content/dam/minsait-viajes(/.*)?"/>
+        <include pattern="/content/dam/minsait-viajes/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/minsait-viajes/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/minsait-viajes" mode="merge"/>
+</workspaceFilter>
