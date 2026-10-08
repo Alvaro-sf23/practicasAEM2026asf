@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Título"
+                        name="./title"/>
+
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        fieldLabel="Descripción"
+                        name="./description"/>
+                        
+                        
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                        fieldLabel="Imagen"
+                        name="./image"
+                        fileNameParameter="./fileName"
+                        fileReferenceParameter="./image"
+                        mimeTypes="[image/*]"
+                        allowUpload="{Boolean}false"/>
+
+                    <button1Label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Label botón 1"
+                        name="./button1Label"/>
+
+                    <button1Link
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Link botón 1"
+                        name="./button1Link"/>
+
+                    <button2Label
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Label botón 2"
+                        name="./button2Label"/>
+
+                    <button2Link
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Link botón 2"
+                        name="./button2Link"/>
+
+
+                    <numberOfButtons
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Número de botones"
+                        name="./numberOfButtons">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <one
+                                jcr:primaryType="nt:unstructured"
+                                text="1 botón"
+                                value="1"/>
+
+                            <two
+                                jcr:primaryType="nt:unstructured"
+                                text="2 botones"
+                                value="2"/>
+
+                        </items>
+
+                    </numberOfButtons>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,38 @@
+<div class="banner">
+
+    <img
+        class="banner__image"
+        src="${properties.image}"
+        alt="${properties.title}">
+
+    <div class="banner__content">
+
+        <h1 class="banner__title">
+            ${properties.title}
+        </h1>
+
+        <p class="banner__description">
+            ${properties.description}
+        </p>
+
+        <div class="banner__buttons">
+
+            <a
+                class="banner__button banner__button--primary"
+                href="${properties.button1Link}"
+                data-sly-test="${properties.numberOfButtons == '1' || properties.numberOfButtons == '2'}">
+                ${properties.button1Label}
+            </a>
+
+            <a
+                class="banner__button banner__button--secondary"
+                href="${properties.button2Link}"
+                data-sly-test="${properties.numberOfButtons == '2'}">
+                ${properties.button2Label}
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
