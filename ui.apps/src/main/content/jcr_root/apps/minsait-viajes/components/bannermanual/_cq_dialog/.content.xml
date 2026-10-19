@@ -33,15 +33,15 @@
                         name="./description"/>
                         
                         
-                    <image
+                   
+                    <img
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
-                        fieldLabel="Imagen"
-                        name="./image"
-                        fileNameParameter="./fileName"
-                        fileReferenceParameter="./image"
-                        mimeTypes="[image/*]"
-                        allowUpload="{Boolean}false"/>
+                        data-sly-test="${properties.image}"
+                        class="banner__image"
+                        src="${properties.image}"
+                        alt="${properties.title}"
+                        loading="lazy"/>
+
 
                     <button1Label
                         jcr:primaryType="nt:unstructured"

@@ -1,0 +1,42 @@
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></sly>
+
+<div class="informacion-destacada"
+     data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component"
+     data-sly-test="${properties.title || properties.description || properties.image || properties.tag}">
+
+    <div class="informacion-destacada__contenido">
+
+        <p class="informacion-destacada__tag"
+           data-sly-test="${properties.tag}">
+            ${properties.tag}
+        </p>
+
+        <h2 class="informacion-destacada__titulo"
+            data-sly-test="${properties.title}">
+            ${properties.title}
+        </h2>
+
+        <div class="informacion-destacada__descripcion"
+             data-sly-test="${properties.description}">
+            ${properties.description}
+        </div>
+
+        <a class="informacion-destacada__boton"
+           href="${properties.buttonLink @ context='uri'}"
+           data-sly-test="${properties.buttonText && properties.buttonLink}">
+            ${properties.buttonText}
+        </a>
+
+    </div>
+
+    <div class="informacion-destacada__imagen-contenedor"
+         data-sly-test="${properties.image}">
+        <img class="informacion-destacada__imagen"
+             src="${properties.image @ context='uri'}"
+             alt="${properties.title}"/>
+    </div>
+
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!properties.title}"></sly>
