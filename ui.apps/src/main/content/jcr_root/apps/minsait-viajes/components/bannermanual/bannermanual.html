@@ -1,9 +1,10 @@
-<div class="banner">
-
-    <img
+<div class="banner banner--${properties.backgroundColor @ context='attribute'}">
+   <img
+        data-sly-test="${properties.image}"
         class="banner__image"
-        src="${properties.image}"
-        alt="${properties.title}">
+        src="${properties.image @ context='uri'}"
+        alt="${properties.title}"
+        loading="lazy"/>
 
     <div class="banner__content">
 
