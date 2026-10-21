@@ -1,5 +1,214 @@
 
-@import 'variables';
-@import 'base';
-@import '../components/**/*.scss';
-@import './styles/*.scss';
+
+/* Swiper - estructura básica del carrusel */
+.cmp-carousel.swiper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.cmp-carousel .swiper-wrapper {
+    display: flex;
+}
+
+.cmp-carousel .swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Navegación */
+.cmp-carousel .cmp-carousel__action--previous,
+.cmp-carousel .cmp-carousel__action--next {
+    cursor: pointer;
+}
+
+/* Paginación */
+.cmp-carousel .swiper-pagination {
+    position: relative;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.cmp-carousel .swiper-pagination-bullet {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background: #888;
+    cursor: pointer;
+}
+
+.cmp-carousel .swiper-pagination-bullet-active {
+    background: #222;
+}
+.cmp-carousel.swiper .cmp-carousel__item.swiper-slide {
+    display: block;
+}
+.cmp-carousel__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.cmp-carousel__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background: #fff;
+    color: #222;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.cmp-carousel__action:hover {
+    background: #222;
+    color: #fff;
+}
+
+.cmp-carousel__action:focus-visible {
+    outline: 3px solid #1677ff;
+    outline-offset: 3px;
+}
+
+.cmp-carousel__action.swiper-button-disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* Controles situados abajo a la derecha */
+.cmp-carousel__actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+/* Botones de flecha */
+.cmp-carousel__actions .cmp-carousel__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background: #fff;
+    color: #222;
+    font-size: 28px;
+    line-height: 1;
+    text-indent: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Ocultar cualquier texto original de AEM */
+.cmp-carousel__actions .cmp-carousel__action-text {
+    display: none;
+}
+
+/* Hover */
+.cmp-carousel__actions .cmp-carousel__action:hover {
+    background: #222;
+    color: #fff;
+}
+
+/* Accesibilidad con teclado */
+.cmp-carousel__actions .cmp-carousel__action:focus-visible {
+    outline: 3px solid #1677ff;
+    outline-offset: 3px;
+}
+/* Posición de las flechas debajo del carrusel */
+.cmp-carousel.swiper {
+    display: flex;
+    flex-direction: column;
+}
+
+.cmp-carousel.swiper .cmp-carousel__actions {
+    position: static !important;
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 16px 0;
+    order: 2;
+}
+
+.cmp-carousel.swiper .swiper-wrapper {
+    order: 1;
+}
+
+.cmp-carousel.swiper .swiper-pagination {
+    order: 3;
+}
+
+.cmp-carousel.swiper .cmp-carousel__actions .cmp-carousel__action {
+    position: static !important;
+    display: inline-flex !important;
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background: #fff;
+    color: #222;
+    font-size: 28px;
+    line-height: 1;
+}
+/* Hacer visibles las flechas dentro de los círculos */
+.cmp-carousel.swiper .cmp-carousel__actions .cmp-carousel__action span {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #222 !important;
+    font-size: 32px !important;
+    font-family: Arial, sans-serif !important;
+    font-weight: normal !important;
+    line-height: 1 !important;
+    text-indent: 0 !important;
+    overflow: visible !important;
+}
+
+.cmp-carousel.swiper .cmp-carousel__actions .cmp-carousel__action {
+    color: #222 !important;
+    text-indent: 0 !important;
+    font-size: 32px !important;
+    overflow: visible !important;
+}
+.cmp-carousel.swiper .cmp-carousel__actions .cmp-carousel__action-icon {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    color: inherit !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 32px !important;
+    line-height: 1 !important;
+    text-indent: 0 !important;
+    pointer-events: none;
+}

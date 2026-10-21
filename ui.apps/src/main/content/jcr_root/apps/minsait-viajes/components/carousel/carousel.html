@@ -1,0 +1,43 @@
+
+
+<sly data-sly-use.carousel="com.adobe.cq.wcm.core.components.models.Carousel"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.controlsTemplate="controls.html"
+     data-sly-set.items="${carousel.children || carousel.items}"></sly>
+
+<div data-panelcontainer="${wcmmode.edit && 'carousel'}"
+     id="${carousel.id}"
+     class="cmp-carousel swiper"
+     role="region"
+     aria-label="${carousel.accessibilityLabel}"
+     aria-live="polite"
+     aria-roledescription="carousel"
+     data-cmp-is="carousel"
+     data-cmp-data-layer="${carousel.data.json}"
+     data-placeholder-text="${wcmmode.edit && 'Please add Carousel components here' @ i18n}">
+
+    <sly data-sly-call="${controlsTemplate.controls @ carousel=carousel}"></sly>
+
+    <div class="swiper-wrapper cmp-carousel__content"
+         data-sly-test="${items && items.size > 0}">
+
+        <div data-sly-repeat.item="${items}"
+             data-sly-resource="${item.resource @ decorationTagName='div'}"
+             id="${item.id}-tabpanel"
+             class="cmp-carousel__item swiper-slide${item.name == carousel.activeItem ? ' cmp-carousel__item--active' : ''}"
+             role="group"
+             aria-roledescription="slide"
+             aria-label="${'Slide {0} of {1}' @ format=[itemList.count, items.size], i18n}"
+             data-cmp-data-layer="${item.data.json}"
+             data-cmp-hook-carousel="item">
+        </div>
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+    <sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys/newpar', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"
+         data-sly-test="${(wcmmode.edit || wcmmode.preview) && items.size < 1}"></sly>
+
+</div>
+

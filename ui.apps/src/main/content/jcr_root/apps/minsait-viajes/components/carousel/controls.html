@@ -1,0 +1,21 @@
+
+
+<template data-sly-template.controls="${@ carousel}">
+    <div class="cmp-carousel__actions">
+        <button
+            type="button"
+            class="cmp-carousel__action cmp-carousel__action--previous"
+            data-cmp-hook-carousel="previous"
+            aria-label="Anterior">
+            <span class="cmp-carousel__action-icon" aria-hidden="true">&#x2039;</span>
+        </button>
+
+        <button
+            type="button"
+            class="cmp-carousel__action cmp-carousel__action--next"
+            data-cmp-hook-carousel="next"
+            aria-label="Siguiente">
+            <span class="cmp-carousel__action-icon" aria-hidden="true">&#x203A;</span>
+        </button>
+    </div>
+</template>
