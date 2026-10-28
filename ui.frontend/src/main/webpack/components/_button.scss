@@ -2,3 +2,21 @@
 .cmp-button__text {}
 .cmp-button__icon {}
 //.cmp-button__icon--myIcon {}
+
+
+.cmp-button--primary {
+    background-color: #0070f3;
+    border: 2px solid #0070f3;
+    color: #fff;
+}
+
+.cmp-button--secondary {
+    background-color: transparent;
+    border: 2px solid #0070f3;
+    color: #0070f3;
+}
+
+.cmp-button--primary .cmp-button__text,
+.cmp-button--secondary .cmp-button__text {
+    color: inherit;
+}

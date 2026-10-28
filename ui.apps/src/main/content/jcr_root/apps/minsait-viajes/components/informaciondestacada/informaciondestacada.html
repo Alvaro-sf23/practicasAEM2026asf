@@ -1,15 +1,15 @@
-
 <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></sly>
 
 <div class="informacion-destacada informacion-destacada--${properties.backgroundColor @ context='attribute'}"
      data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component"
-     data-sly-test="${properties.title || properties.description || properties.image || properties.tag}">
+     data-sly-use.tagsModel="com.minsaitviajes.core.models.TagsModel"
+     data-sly-test="${properties.title || properties.description || properties.image || tagsModel.tagTitles}">
 
     <div class="informacion-destacada__contenido">
 
         <p class="informacion-destacada__tag"
-           data-sly-test="${properties.tag}">
-            ${properties.tag}
+           data-sly-list.tagTitle="${tagsModel.tagTitles}">
+            ${tagTitle}
         </p>
 
         <h2 class="informacion-destacada__titulo"

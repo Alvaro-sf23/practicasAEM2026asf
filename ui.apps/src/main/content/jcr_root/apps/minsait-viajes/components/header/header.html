@@ -1,0 +1,63 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+
+    <header class="cmp-header">
+
+        <!-- Logo -->
+        <div class="cmp-header__logo">
+            <sly data-sly-resource="${'logo' @ resourceType='minsait-viajes/components/image'}"></sly>
+        </div>
+
+        <!-- Navegación -->
+        <nav class="cmp-header__navigation" aria-label="Navegación principal">
+            <sly data-sly-resource="${'navigation' @ resourceType='minsait-viajes/components/navigation'}"></sly>
+        </nav>
+
+        <!-- Contacto -->
+        <div class="cmp-header__contact">
+
+            <a data-sly-test="${properties.email}"
+               class="cmp-header__email"
+               href="mailto:${properties.email}">
+                ${properties.email}
+            </a>
+
+            <a data-sly-test="${properties.phone}"
+               class="cmp-header__phone"
+               href="tel:${properties.phone}">
+                ${properties.phone}
+            </a>
+
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="cmp-header__social"
+             data-sly-list.social="${resource.children}">
+
+            <sly data-sly-test="${social.name == 'socialLinks'}">
+
+                <sly data-sly-list.item="${social.children}">
+
+                    <a data-sly-test="${item.valueMap.url}"
+                       class="cmp-header__social-link"
+                       href="${item.valueMap.url}"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <img data-sly-test="${item.valueMap.image}"
+                             class="cmp-header__social-image"
+                             src="${item.valueMap.image @ context='uri'}"
+                             alt="Red social"/>
+                             
+                        <small>${item.valueMap.image}</small>
+
+                    </a>
+
+                </sly>
+
+            </sly>
+
+        </div>
+
+    </header>
+
+</sly>
