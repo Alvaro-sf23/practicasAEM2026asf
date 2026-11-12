@@ -1,0 +1,105 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+
+    <footer class="cmp-footer">
+
+        <!-- Logo -->
+        <div class="cmp-footer__logo">
+            <img data-sly-test="${properties.logoPath}"
+                 src="${properties.logoPath @ context='uri'}"
+                 alt="Logo"
+                 class="cmp-footer__logo-image"/>
+        </div>
+
+        <!-- Primera lista de enlaces -->
+        <div class="cmp-footer__links-group"
+             data-sly-test="${properties.linksOneTitle || resource.children}">
+
+            <h2 data-sly-test="${properties.linksOneTitle}"
+                class="cmp-footer__links-title">
+                ${properties.linksOneTitle}
+            </h2>
+
+            <ul class="cmp-footer__links"
+                data-sly-list.link="${resource.children}">
+
+                <sly data-sly-test="${link.name == 'linksOne'}">
+                    <li data-sly-list.item="${link.children}">
+                        <a data-sly-test="${item.valueMap.path}"
+                           href="${item.valueMap.path @ context='uri'}">
+                            ${item.valueMap.title}
+                        </a>
+                    </li>
+                </sly>
+
+            </ul>
+        </div>
+
+        <!-- Segunda lista de enlaces -->
+        <div class="cmp-footer__links-group">
+
+            <h2 data-sly-test="${properties.linksTwoTitle}"
+                class="cmp-footer__links-title">
+                ${properties.linksTwoTitle}
+            </h2>
+
+            <ul class="cmp-footer__links"
+                data-sly-list.link="${resource.children}">
+
+                <sly data-sly-test="${link.name == 'linksTwo'}">
+                    <li data-sly-list.item="${link.children}">
+                        <a data-sly-test="${item.valueMap.path}"
+                           href="${item.valueMap.path @ context='uri'}">
+                            ${item.valueMap.title}
+                        </a>
+                    </li>
+                </sly>
+
+            </ul>
+        </div>
+
+        <!-- Texto -->
+        <div data-sly-test="${properties.footerText}"
+             class="cmp-footer__text">
+            ${properties.footerText}
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="cmp-footer__social"
+             data-sly-list.social="${resource.children}">
+
+            <sly data-sly-test="${social.name == 'socialLinks'}">
+
+                <a data-sly-test="${social.valueMap.url}"
+                   class="cmp-footer__social-link"
+                   href="${social.valueMap.url}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <img data-sly-test="${social.valueMap.image}"
+                         src="${social.valueMap.image @ context='uri'}"
+                         alt="Red social"
+                         class="cmp-footer__social-image"/>
+
+                </a>
+
+                <sly data-sly-list.item="${social.children}">
+                    <a data-sly-test="${item.valueMap.url}"
+                       class="cmp-footer__social-link"
+                       href="${item.valueMap.url}"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <img data-sly-test="${item.valueMap.image}"
+                             src="${item.valueMap.image @ context='uri'}"
+                             alt="Red social"
+                             class="cmp-footer__social-image"/>
+                    </a>
+                </sly>
+
+            </sly>
+
+        </div>
+
+    </footer>
+
+</sly>

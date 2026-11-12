@@ -1,23 +1,25 @@
 {
-    // Use IntelliSense para saber los atributos posibles.
-    // Mantenga el puntero para ver las descripciones de los existentes atributos.
-    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "java",
- 
-            "name": "Debug (Attach)",
- 
-            "projectName": "minsaitviajes.core",
- 
-            "request": "attach",
- 
-            "hostName": "localhost",
- 
-            "port": 8000
- 
-        }
- 
-    ]
+    "files.watcherExclude": {
+        "**/target/**": true,
+        "**/ui.apps/target/**": true
+    },
+    "search.exclude": {
+        "**/target/**": true
+    },
+    "files.exclude": {
+        "**/target/**": true
+    },
+    "java.project.resourceFilters": [
+        "node_modules",
+        "\\.git",
+        "target"
+    ],
+    "java.import.exclusions": [
+        "**/target/**",
+        "**/node_modules/**",
+        "**/.metadata/**",
+        "**/archetype-resources/**",
+        "**/META-INF/maven/**"
+    ],
+    "java.autobuild.enabled": false
 }

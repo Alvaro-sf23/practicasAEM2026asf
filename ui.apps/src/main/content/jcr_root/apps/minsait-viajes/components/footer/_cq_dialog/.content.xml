@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Footer"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <logoTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Logo"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <logoPath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Ruta de la imagen del logo"
+                                name="./logoPath"
+                                rootPath="/content/dam"/>
+                        </items>
+                    </logoTab>
+
+                    <linksOne
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Lista de enlaces 1"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <linksOneTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Título de la lista"
+                                name="./linksOneTitle"/>
+
+                            <linksOneItems
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Enlaces"
+                                fieldDescription="Añade el texto y la ruta de cada enlace">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./linksOne">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Texto del enlace"
+                                            name="title"/>
+                                        <path
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Ruta del enlace"
+                                            name="path"
+                                            rootPath="/content"/>
+                                    </items>
+                                </field>
+                            </linksOneItems>
+
+                        </items>
+                    </linksOne>
+
+                    <linksTwo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Lista de enlaces 2"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <linksTwoTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Título de la lista"
+                                name="./linksTwoTitle"/>
+
+                            <linksTwoItems
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Enlaces"
+                                fieldDescription="Añade el texto y la ruta de cada enlace">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./linksTwo">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Texto del enlace"
+                                            name="title"/>
+                                        <path
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Ruta del enlace"
+                                            name="path"
+                                            rootPath="/content"/>
+                                    </items>
+                                </field>
+                            </linksTwoItems>
+
+                        </items>
+                    </linksTwo>
+
+                    <textTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Texto"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <footerText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Texto del Footer"
+                                name="./footerText"
+                                rows="{Long}4"/>
+                        </items>
+                    </textTab>
+
+                    <socialTab
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Redes sociales"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <socialLinks
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Redes sociales"
+                                fieldDescription="Añade la URL y la ruta de la imagen">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./socialLinks">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <url
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="URL de la red social"
+                                            name="url"/>
+                                        <image
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Imagen de la red social"
+                                            name="image"
+                                            rootPath="/content/dam"/>
+                                    </items>
+                                </field>
+                            </socialLinks>
+
+                        </items>
+                    </socialTab>
+
+                </items>
+            </tabs>
+
+        </items>
+    </content>
+</jcr:root>
